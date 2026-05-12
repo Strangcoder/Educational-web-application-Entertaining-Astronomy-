@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/page_main/style_mainP.css' %}">
+<link rel="stylesheet" href="{% static 'css/style_skeleton.css' %}">
+<link rel="stylesheet" href="{% static 'css/page_main/Bstyle_card_main_pg.css' %}">
+<link rel="stylesheet" href="{% static 'css/page_main/style_card_start.css' %}">
+<link rel="stylesheet" href="{% static 'css/page_main/style_card_story.css' %}">
+<link rel="stylesheet" href="{% static 'css/page_main/Bstyle_base_card_info.css' %}">
+<link rel="stylesheet" href="{% static 'css/page_main/style_block_card.css' %}">
+{% endblock head %}
+{% block content %}
+<div class="parent">
+{% include 'space_website/space/main_page/start_card.html' %}
+</div>
+<div class="parent">
+{% include 'space_website/space/main_page/story_card.html' %}
+</div>
+<div class="parent">
+{% include 'space_website/space/main_page/block_card.html' %}
+</div>
+{% endblock %}

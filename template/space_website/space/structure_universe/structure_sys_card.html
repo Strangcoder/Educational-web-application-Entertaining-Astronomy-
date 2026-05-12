@@ -1,0 +1,145 @@
+{% extends 'base_card_home.html' %}
+{% load static %}
+{% block class_cbc %}structure_screen{% endblock class_cbc %}
+{% block content %}
+<div class="block_content">
+    <div class="block_title">
+        <p class="title_txt">
+            Структуры Вселенной
+        </p>
+    </div>
+    <div class="swiper planet-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="block_planet">
+                    {% include 'space_website/space/structure_universe/T_structure_card_temp.html' with path="image/structure_universe_img/asteroid_belt.png" name_planets="ПОЯС АСТЕРОИДОВ" link="belt-kuiper"%}
+                    {% include 'space_website/space/structure_universe/T_structure_card_temp.html' with path="image/structure_universe_img/oort_cloud.png" name_planets="ОБЛАКО ООРТА" link="cloud-oort"%}
+                    {% include 'space_website/space/structure_universe/T_structure_card_temp.html' with path="image/structure_universe_img/alpha_centauri.png" name_planets="АЛЬФА ЦЕНТАВРА" link="alpha-centauri"%}
+                    {% include 'space_website/space/structure_universe/T_structure_card_temp.html' with path="image/structure_universe_img/sirius.png" name_planets="СИРИУС" link="sirius"%}
+                    {% include 'space_website/space/structure_universe/T_structure_card_temp.html' with path="image/structure_universe_img/millky_way.png" name_planets="МЛЕЧНЫЙ ПУТЬ" link="milky-way"%}
+                    {% include 'space_website/space/structure_universe/T_structure_card_temp.html' with path="image/structure_universe_img/andromeda.png" name_planets="АНДРОМЕДА" link="andromeda"%}
+                    {% include 'space_website/space/structure_universe/T_structure_card_temp.html' with path="image/structure_universe_img/group_galaxies.png" name_planets="ГРУППА ГАЛАКТИК" link="group-galaxies"%}
+                    {% include 'space_website/space/structure_universe/T_structure_card_temp.html' with path="image/structure_universe_img/virgo_supercluster.png" name_planets="СВЕРХСКОП. ДЕВА" link="virgo-supercluster"%}
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="block_planet">
+                    {% include 'space_website/space/structure_universe/T_structure_card_temp.html' with path="image/structure_universe_img/laniakea.png" name_planets="ЛАНИАКЕЯ" link="laniakea"%}
+                    {% include 'space_website/space/structure_universe/T_structure_card_temp.html' with name_planets="НЕИЗВЕСТНО" link="" only%}
+                    {% include 'space_website/space/structure_universe/T_structure_card_temp.html' with name_planets="НЕИЗВЕСТНО" link="" only%}
+                    {% include 'space_website/space/structure_universe/T_structure_card_temp.html' with name_planets="НЕИЗВЕСТНО" link="" only%}
+                    {% include 'space_website/space/structure_universe/T_structure_card_temp.html' with name_planets="НЕИЗВЕСТНО" link="" only%}
+                    {% include 'space_website/space/structure_universe/T_structure_card_temp.html' with name_planets="НЕИЗВЕСТНО" link="" only%}
+                    {% include 'space_website/space/structure_universe/T_structure_card_temp.html' with name_planets="НЕИЗВЕСТНО" link="" only%}
+                    {% include 'space_website/space/structure_universe/T_structure_card_temp.html' with name_planets="НЕИЗВЕСТНО" link="" only%}
+                </div>
+            </div>
+
+        </div>
+        <div class="swiper-button-next">
+            <svg width="21" height="34" viewBox="0 0 21 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d_382_3192)">
+                    <path d="M18.1421 18.1421C18.9232 17.3611 18.9232 16.0947 18.1421 15.3137L5.41423 2.58577C4.63318 1.80472 3.36685 1.80472 2.5858 2.58577C1.80475 3.36682 1.80475 4.63315 2.5858 5.4142L13.8995 16.7279L2.5858 28.0416C1.80475 28.8227 1.80475 30.089 2.5858 30.87C3.36685 31.6511 4.63318 31.6511 5.41423 30.87L18.1421 18.1421ZM15.7279 16.7279V18.7279H16.7279V16.7279V14.7279H15.7279V16.7279Z" fill="#008EC0"/>
+                </g>
+            </svg>
+
+        </div>
+        <div class="swiper-button-prev">
+            <svg width="21" height="34" viewBox="0 0 21 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                    <path d="M2.58579 18.1421C1.80474 17.3611 1.80474 16.0947 2.58579 15.3137L15.3137 2.58577C16.0948 1.80472 17.3611 1.80472 18.1421 2.58577C18.9232 3.36682 18.9232 4.63315 18.1421 5.4142L6.82843 16.7279L18.1421 28.0416C18.9232 28.8227 18.9232 30.089 18.1421 30.87C17.3611 31.6511 16.0948 31.6511 15.3137 30.87L2.58579 18.1421ZM5 16.7279L5 18.7279H4L4 16.7279V14.7279H5L5 16.7279Z" fill="#00BCFF"/>
+                </g>
+            </svg>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}
+
+{% block icon %}
+<a href="{% url 'space:solar_system' %}">
+    <g transform="translate(395 17) scale(1)">
+
+        <!-- ЗАДНЕЕ КОЛЬЦО -->
+        <g filter="url(#home_filter_2)">
+            <ellipse cx="16" cy="16" rx="15" ry="5.5"
+                    fill="#003053"
+                    stroke="#2AABDD"/>
+        </g>
+
+        <!-- ПЛАНЕТА -->
+        <g filter="url(#home_filter_1)">
+            <!-- fill -->
+            <circle cx="16" cy="16" r="9.5"
+                    fill="#003053"/>
+            <!-- stroke -->
+            <circle cx="16" cy="16" r="9.5"
+                    stroke="#2AABDD"/>
+        </g>
+
+        <!-- ПЕРЕДНЕЕ КОЛЬЦО -->
+        <g filter="url(#home_filter_2)">
+            <path d="
+                M1 16
+                A15 5.5 0 0 0 31 16
+                L29 16
+                A13 4.5 0 0 1 3 16
+                Z"
+                fill="#003053"
+                stroke="#2AABDD"/>
+        </g>
+
+    </g>
+</a>
+
+<a href="{% url 'space:quiz' 'structure-of-universe' %}">
+    <g class="quiz-signal {% if all_structure_visited %}quiz-signal-active{% endif %}" transform="translate(658 4) scale(1)">
+        
+        <g>
+            <path class="quiz-base"
+                d="M16 5 C22 5, 26 8, 26 12 C26 16, 22 17, 20 19 L20 21 H14 L14 18 C16 16, 22 15, 22 12 C22 9, 20 8, 16 8 C13 8, 11 9, 10 11 L7 9 C9 6, 12 5, 16 5 Z"
+                fill="#003053"/>
+
+            <path class="{% if all_structure_visited %}quiz-signal-active{% endif %}"
+                d="M16 5 C22 5, 26 8, 26 12 C26 16, 22 17, 20 19 L20 21 H14 L14 18 C16 16, 22 15, 22 12 C22 9, 20 8, 16 8 C13 8, 11 9, 10 11 L7 9 C9 6, 12 5, 16 5 Z"
+                fill="none"
+                stroke="#2AABDD"
+                stroke-width="1.2"/>
+        </g>
+
+        <g>
+            <circle class="{% if all_structure_visited %}quiz-signal-active{% endif %}"
+                    cx="16" cy="24" r="2.2"
+                    fill="#003053"
+                    stroke="#2AABDD"
+                    stroke-width="1"/>
+        </g>
+
+    </g>
+</a>
+
+<a href="{% url 'space:myths_ab_space' %}">
+    <g transform="translate(925 17) scale(1)">
+        
+        <!-- Планета -->
+        <g filter="url(#home_filter_1)">
+            <circle cx="16" cy="16" r="10" fill="#003053"/>
+            <circle cx="16" cy="16" r="10" stroke="#2AABDD"/>
+        </g>
+
+        <!-- Лёгкое "облако заблуждения" -->
+        <g filter="url(#home_filter_2)">
+            <path d="M9 18 Q11 14 14 16 Q16 12 20 15 Q23 14 24 18"
+                  stroke="#2AABDD"/>
+        </g>
+
+        <!-- Знак вопроса -->
+        <g filter="url(#home_filter_2)">
+            <path d="M13 12 Q13 9 16 9 Q19 9 19 12 Q19 14 16 15 Q16 16 16 17"
+                  stroke="#2AABDD"/>
+            <circle cx="16" cy="20" r="1" fill="#2AABDD"/>
+        </g>
+
+    </g>
+</a>
+{% endblock icon %}

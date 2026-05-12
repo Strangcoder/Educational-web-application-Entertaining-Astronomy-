@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="{% block link_css %}{% endblock %}"> -->
+    <title>SPACE</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  {% endblock head %}
+  <link rel="stylesheet" href="{% static 'css/tablet.css' %}">
+</head>
+<body>
+    {% block content%}
+    {% endblock%}
+    <script type="text/javascript">
+        let stars = [];
+
+        // параметры экспоненты
+        let minSpeed = 1;
+        let maxSpeed = 40;
+        let t = 0;              // 0..1
+        let growSpeed = 0.003;  // скорость роста
+
+        let speed = minSpeed;
+
+        function setup() {
+          createCanvas(windowWidth, windowHeight);
+          for (let i = 0; i < 800; i++) {
+            stars[i] = new Star();
+          }
+        }
+
+        function draw() {
+          background(0);
+          translate(width / 2, height / 2);
+
+          // экспоненциальный рост скорости
+          t = min(t + growSpeed, 1);
+          speed = minSpeed * pow(maxSpeed / minSpeed, t);
+
+          for (let i = 0; i < stars.length; i++) {
+            stars[i].update();
+            stars[i].show();
+          }
+        }
+
+        function Star() {
+          this.x = random(-width, width);
+          this.y = random(-height, height);
+          this.z = random(width);
+          this.nz = this.z;
+
+          this.update = function () {
+            this.z -= speed;
+
+            if (this.z < 1) {
+              this.x = random(-width, width);
+              this.y = random(-height, height);
+              this.z = width;
+              this.nz = this.z;
+            }
+          };
+
+          this.show = function () {
+            const sx = map(this.x / this.z, 0, 1, 0, width);
+            const sy = map(this.y / this.z, 0, 1, 0, height);
+
+            const nx = map(this.x / this.nz, 0, 1, 0, width);
+            const ny = map(this.y / this.nz, 0, 1, 0, height);
+
+            stroke(176, 224, 230);
+            line(nx, ny, sx, sy);
+
+            this.nz = this.z;
+          };
+        }
+    </script>
+    {% block script %}{% endblock script %}
+</body>
+</html>

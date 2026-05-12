@@ -1,0 +1,15 @@
+{% extends 'space_website/space/planets/structur_planet.html' %}
+{% load static %}
+{% block model %}
+<div class="planet" id="model-{{planet.model_name}}"></div>
+{% endblock model %}
+{% block object_name %}{{planet.name}}{% endblock object_name %}
+{% block object_paramets %}
+Тип:  {{planet.type_object}}<br>
+Диаметр:  {{planet.diametr}} км<br>
+Расстояние до Земли:  {{planet.distance}} млн км<br>
+Состав: {{planet.structure}}<br>
+Температура:  {{planet.temp}}<br>
+Особенности:  {{planet.features}}<br>
+{% endblock object_paramets %}
+{% block object_desc %}{{planet.desc}}{% endblock object_desc %}

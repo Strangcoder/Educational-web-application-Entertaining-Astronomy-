@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/style_skeleton.css' %}">
+<link rel="stylesheet" href="{% static 'css/page_myths_ab_space/page_myths_detail/style_structure.css'%}">
+<link rel="stylesheet" href="{% static 'css/page_myths_ab_space/page_myths_detail/structur_screen_style.css'%}">
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script> -->
+{% endblock head %}
+
+{% block content %}
+<div class="parent">
+    {% include 'space_website/space/myths_ab_space/myth_details/myths_card_detail.html' with myth=myth %}
+</div>
+{% endblock content %}

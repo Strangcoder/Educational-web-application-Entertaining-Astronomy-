@@ -1,0 +1,18 @@
+{% load static %}
+<a style="all:unset; width: 100%; height: auto;" href="{% url 'space:myths_ab_space_detail' link %}">
+    <div class="parent_block myth_item {% if link in visited_slugs %}visited{% endif %}">
+        <div class="block_txt">
+            <div class="top-part">
+                <div class="corner left-top"></div>
+                <div class="corner rigth-top"></div>
+            </div>
+            <div class="middle-part">
+                <p>{{title_txt}}</p>
+            </div>
+            <div class="bottom-part">
+                <div class="corner left-bottom"></div>
+                <div class="corner rigth-bottom"></div>
+            </div>
+        </div>
+    </div>
+</a>

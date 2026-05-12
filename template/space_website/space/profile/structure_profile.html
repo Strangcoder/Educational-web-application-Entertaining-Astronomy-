@@ -1,0 +1,254 @@
+{% extends 'base_card_home.html' %}
+{% load static %}
+{% block class_cbc %}structure_profile{% endblock class_cbc %}
+{% block content %}
+<div class="main_box_profile" id="contentProfile">
+    <div class="box_profile">
+        <div class="profile_data">
+            <div class="user_data">
+                <div class="ava">
+                    <img class="profile_img" src="{% static 'image/profile_img/card_profile2.png' %}" lazy>
+                </div>
+                <div class="txt_info">
+                    <p>
+                        Логин: {{username|capfirst}}<br>
+                        Позывной: Феникс<br>
+                        Индитификатор: PX-774A-Ω<br>
+                        Статус: На миссии<br>
+                        Ранг: {{profile.rank.name}} <span class="hint" data-tip="{{profile.rank.description}}">?</span><br>
+                        Дата регистрации: {{joined|date:"d.m.Y"}}<br>
+                    </p>
+                    <div class="xp-wrapper">
+
+                        <div class="xp-bar">
+
+                            <div 
+                                class="xp-fill"
+                                style="width: {{ progress_data.progress_percent }}%;"
+                            ></div>
+
+                            <div class="xp-text">
+                                {% if progress_data.next_rank %}
+                                    {{ profile.xp }} / {{ progress_data.next_rank.required_xp }}
+                                {% else %}
+                                    {{ profile.xp }} / {{ profile.xp }}
+                                {% endif %}
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="box_rang">
+                        {% if progress_data.next_rank %}
+                            <p>{{progress_data.current_rank.name}}</p>
+                            <p>{{progress_data.next_rank.name}}</p>
+                        {% else %}
+                            <p></p>
+                            <p>{{progress_data.current_rank.name}}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="meta_data">
+                <div class="body_parametrs">
+                    <div class="block_body">
+                        <div class="meta_body">
+                            <img class="img_body" src="{% static 'image/profile_img/meta_body.png'%}" lazy>
+                        </div>
+                        <div class="meta_info">
+                            <p>
+                                Рост: 175 см<br>
+                                Масса: 80 кг<br>
+                                Пульс: 64 уд/мин<br>
+                                Стресс: 18%<br>
+                                Усталость: 22%<br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="meta_decor">
+                    <div class="box_decor">
+                        <div class="img_decor" style="--meta_img: url({% static 'image/profile_img/dnk.png' %})"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="data_achiev">
+            <div class="swiper achiev-slider">
+                <div class="swiper-wrapper">
+                    {% for ach in achiev %}
+                        <div class="swiper-slide">
+                            <div class="block_achiev">
+                                {% for detail in ach %}
+                                    {% include 'space_website/space/profile/achiev.html' with text=detail.title reward=detail.reward_xp %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-button-next">
+                    <svg width="21" height="34" viewBox="0 0 21 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_382_3192)">
+                            <path d="M18.1421 18.1421C18.9232 17.3611 18.9232 16.0947 18.1421 15.3137L5.41423 2.58577C4.63318 1.80472 3.36685 1.80472 2.5858 2.58577C1.80475 3.36682 1.80475 4.63315 2.5858 5.4142L13.8995 16.7279L2.5858 28.0416C1.80475 28.8227 1.80475 30.089 2.5858 30.87C3.36685 31.6511 4.63318 31.6511 5.41423 30.87L18.1421 18.1421ZM15.7279 16.7279V18.7279H16.7279V16.7279V14.7279H15.7279V16.7279Z" fill="#008EC0"/>
+                        </g>
+                    </svg>
+
+                </div>
+                <div class="swiper-button-prev">
+                    <svg width="21" height="34" viewBox="0 0 21 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path d="M2.58579 18.1421C1.80474 17.3611 1.80474 16.0947 2.58579 15.3137L15.3137 2.58577C16.0948 1.80472 17.3611 1.80472 18.1421 2.58577C18.9232 3.36682 18.9232 4.63315 18.1421 5.4142L6.82843 16.7279L18.1421 28.0416C18.9232 28.8227 18.9232 30.089 18.1421 30.87C17.3611 31.6511 16.0948 31.6511 15.3137 30.87L2.58579 18.1421ZM5 16.7279L5 18.7279H4L4 16.7279V14.7279H5L5 16.7279Z" fill="#00BCFF"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="screen_game" class="hidden">
+    <div class="data-game">
+        <div class="block_score" id="ui">
+            <div class="box_txt_rec"><p>СЕССИЯ</p></div>
+            <p></p>
+            <div id="score">SCORE: 0</div>
+        </div>
+
+        <div class="box_best_rec">
+            <!-- <div class="box_txt_rec"><p>ВАШ РЕКОРД</p></div> -->
+            <div class="block_best_score">
+                <div class="box_txt_rec"><p>ВАШ РЕКОРД</p></div>
+                <p></p>
+                <div id="best_score">ОЧКОВ</div>
+            </div>
+        </div>
+
+        <div class="box_table_rec">
+            <div class="box_txt_rec"><p>РЕКОРДЫ САЙТА</p></div>
+            <div class="general_rec">
+                <table>
+                    <tr>
+                        <th>№</th>
+                        <th>Игрок</th>
+                        <th>Очки</th>
+                        <th>Время</th>
+                    </tr>
+
+                    {% for player in top_players %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ player.username }}</td>
+                        <td>{{ player.score }}</td>
+                        <td>{{ player.time }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="main_screen">
+        <canvas class="canvas-game" id="game"></canvas>
+        <div id="gameOverScreen" class="hidden game-over">
+            <div class="game-over-box">
+                <h2>Игра окончена!</h2>
+                <p>Время: <span id="finalTime">0</span>s</p>
+                <p>Очки: <span id="finalScore">0</span></p>
+                <button id="restartButton">Рестарт</button>
+            </div>
+        </div>
+    </div>
+    <div class="interac_block">
+        <div class="block_management">
+            <div class="management">
+                <div class="box_txt_manag">
+                    <p>УПРАВЛЕНИЕ</p>
+                </div>
+                <div class="box_button_WASD">
+                    <div class="box_W">
+                        <div id="key-W">W</div>
+                    </div>
+                    <div class="box_ASD">
+                        <div id="key-A">A</div>
+                        <div id="key-S">S</div>
+                        <div id="key-D">D</div>
+                    </div>
+                </div>
+                <div class="box_txt_movement">
+                    <p>ДВИЖЕНИЕ</p>
+                </div>
+
+                <div class="box_whitespace">
+                    <div id="key-SPACE"></div>
+                </div>
+                <div class="box_txt_fire">
+                    <p>СТРЕЛЯТЬ</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- {% include 'space_website/space/profile/shop.html' with skin_ship=data_ship user=user_profile%} -->
+{% endblock content %}
+{% block icon %}
+
+<a href="{% url 'space:myths_ab_space' %}">
+    <g transform="translate(395 15) scale(1.1)">
+        
+        <!-- Планета -->
+        <g filter="url(#home_filter_1)">
+            <circle cx="16" cy="16" r="10" fill="#003053"/>
+            <circle cx="16" cy="16" r="10" stroke="#2AABDD"/>
+        </g>
+
+        <!-- Лёгкое "облако заблуждения" -->
+        <g filter="url(#home_filter_2)">
+            <path d="M9 18 Q11 14 14 16 Q16 12 20 15 Q23 14 24 18"
+                  stroke="#2AABDD"/>
+        </g>
+
+        <!-- Знак вопроса -->
+        <g filter="url(#home_filter_2)">
+            <path d="M13 12 Q13 9 16 9 Q19 9 19 12 Q19 14 16 15 Q16 16 16 17"
+                  stroke="#2AABDD"/>
+            <circle cx="16" cy="20" r="1" fill="#2AABDD"/>
+        </g>
+
+    </g>
+</a>
+
+
+<a href="{% url 'space:solar_system' %}">
+    <g transform="translate(924 17) scale(1)">
+
+        <!-- ЗАДНЕЕ КОЛЬЦО -->
+        <g filter="url(#home_filter_2)">
+            <ellipse cx="16" cy="16" rx="15" ry="5.5"
+                    fill="#003053"
+                    stroke="#2AABDD"/>
+        </g>
+
+        <!-- ПЛАНЕТА -->
+        <g filter="url(#home_filter_1)">
+            <!-- fill -->
+            <circle cx="16" cy="16" r="9.5"
+                    fill="#003053"/>
+            <!-- stroke -->
+            <circle cx="16" cy="16" r="9.5"
+                    stroke="#2AABDD"/>
+        </g>
+
+        <!-- ПЕРЕДНЕЕ КОЛЬЦО -->
+        <g filter="url(#home_filter_2)">
+            <path d="
+                M1 16
+                A15 5.5 0 0 0 31 16
+                L29 16
+                A13 4.5 0 0 1 3 16
+                Z"
+                fill="#003053"
+                stroke="#2AABDD"/>
+        </g>
+
+    </g>
+</a>
+{% endblock icon %}

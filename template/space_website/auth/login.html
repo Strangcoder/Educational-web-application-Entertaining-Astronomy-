@@ -1,0 +1,14 @@
+{% extends 'space_website/auth/base_auth.html' %}
+{% block field%}
+{% for field in form %}
+       <div class="auth-field">
+              {{field}}
+              {% for error in field.errors %}
+                     <p class="auth-field-error">{{ error }}</p>
+              {% endfor %}
+       </div>
+{% endfor %}
+{% for error in form.non_field_errors %}
+       <p class="auth-field-error auth-form-error">{{ error }}</p>
+{% endfor %}
+{%endblock%}

@@ -1,0 +1,125 @@
+{% extends 'base_card_home.html' %}
+{% load static %}
+{% block class_cbc %}myth_screen{% endblock class_cbc %}
+{% block content %}
+<div class="block_content">
+    <div class="part_structure">
+            <div class="box-frame-progress">
+                <div class="frame">
+                    {% block model %}{% endblock model %}
+                    <!-- <div class="planet" id="model-sun"></div> -->
+                </div>
+                <div class="progress">
+                    <div class="point sun"></div>
+                    <div class="point mercury"></div>
+                    <div class="point venus"></div>
+                    <div class="point earth"></div>
+                    <div class="point mars"></div>
+                    <div class="point jupiter"></div>
+                    <div class="point saturn"></div>
+                    <div class="point uranus"></div>
+                    <div class="point neptun"></div>
+                </div>
+            </div>
+    </div>
+    <div class="part_desc">
+        <div class="box-desc">
+            <div class="box-name-structure">
+                <p class="text-desc txt-name">{% block object_name %}{% endblock object_name %}</p>
+            </div>
+            <div class="box-parameters-structure">
+                <p class="text-desc txt-paramets"> 
+                    {% block object_paramets %}{% endblock object_paramets %}
+                </p>
+            </div>
+            <div class="box-desc-structure">
+                <p class="text-desc txt-desc-structure">{% block object_desc %}{% endblock object_desc %}</p>
+            </div>
+        </div>
+        <div class="box-arrows">
+            <div class="arrow-left">
+                <a style="all: unset;" href="{% url 'space:myths_ab_space_detail' prev_myth%}">
+                    <svg width="48" height="29" viewBox="0 0 48 29" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow">
+                        <g>
+                            <path d="M3.43934 15.1066C2.85355 14.5208 2.85355 13.571 3.43934 12.9852L12.9853 3.43929C13.5711 2.85351 14.5208 2.85351 15.1066 3.43929C15.6924 4.02508 15.6924 4.97483 15.1066 5.56061L6.62132 14.0459L15.1066 22.5312C15.6924 23.117 15.6924 24.0667 15.1066 24.6525C14.5208 25.2383 13.5711 25.2383 12.9853 24.6525L3.43934 15.1066ZM44.5 14.0459L44.5 15.5459L4.5 15.5459L4.5 14.0459L4.5 12.5459L44.5 12.5459L44.5 14.0459Z" fill="#00BCFF"/>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+            <div class="arrow-right">
+                <a style="all: unset;" href="{% url 'space:myths_ab_space_detail' next_myth %}">
+                    <svg width="48" height="29" viewBox="0 0 48 29" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow">
+                        <g>
+                            <path d="M44.0607 15.1066C44.6464 14.5208 44.6464 13.571 44.0607 12.9852L34.5147 3.43929C33.9289 2.85351 32.9792 2.85351 32.3934 3.43929C31.8076 4.02508 31.8076 4.97483 32.3934 5.56061L40.8787 14.0459L32.3934 22.5312C31.8076 23.117 31.8076 24.0667 32.3934 24.6525C32.9792 25.2383 33.9289 25.2383 34.5147 24.6525L44.0607 15.1066ZM3 14.0459L3 15.5459L43 15.5459L43 14.0459L43 12.5459L3 12.5459L3 14.0459Z" fill="#00BCFF"/>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+{% block icon %}
+<a href="{% url 'space:main' %}#block_studies">
+    <g  transform="translate(395 19) scale(0.9)">
+        <g filter="url(#home_filter_1)">
+        <path d="M27.2763 26.9534H5.74854V14.8007H2.62354L5.05409 12.7173L17.2069 1.95343L28.318 12.7173L30.4013 14.8007H27.2763V26.9534Z" fill="#003053"/>
+        <path d="M27.2763 26.9534H5.74854V14.8007H2.62354L5.05409 12.7173L17.2069 1.95343L28.318 12.7173L30.4013 14.8007H27.2763V26.9534Z" stroke="#2AABDD"/>
+        </g>
+        <g filter="url(#home_filter_2)">
+        <path d="M11.9985 26.6062V17.9257H21.0263V26.6062" stroke="#2AABDD"/>
+        </g>
+    </g>
+</a>
+
+<a href="{% url 'space:quiz' 'myths-about-space' %}">
+    <g class="quiz-signal {% if all_myth_visited %}quiz-signal-active{% endif %}" transform="translate(925 17) scale(1)">
+        
+        <g>
+            <path class="quiz-base"
+                d="M16 5 C22 5, 26 8, 26 12 C26 16, 22 17, 20 19 L20 21 H14 L14 18 C16 16, 22 15, 22 12 C22 9, 20 8, 16 8 C13 8, 11 9, 10 11 L7 9 C9 6, 12 5, 16 5 Z"
+                fill="#003053"/>
+
+            <path class="{% if all_myth_visited %}quiz-signal-active{% endif %}"
+                d="M16 5 C22 5, 26 8, 26 12 C26 16, 22 17, 20 19 L20 21 H14 L14 18 C16 16, 22 15, 22 12 C22 9, 20 8, 16 8 C13 8, 11 9, 10 11 L7 9 C9 6, 12 5, 16 5 Z"
+                fill="none"
+                stroke="#2AABDD"
+                stroke-width="1.2"/>
+        </g>
+
+        <g>
+            <circle class="{% if all_myth_visited %}quiz-signal-active{% endif %}"
+                    cx="16" cy="24" r="2.2"
+                    fill="#003053"
+                    stroke="#2AABDD"
+                    stroke-width="1"/>
+        </g>
+
+    </g>
+</a>
+
+<a href="{% url 'space:myths_ab_space' %}">
+    <g transform="translate(658 2) scale(1.1)">
+        
+        <!-- Планета -->
+        <g filter="url(#home_filter_1)">
+            <circle cx="16" cy="16" r="10" fill="#003053"/>
+            <circle cx="16" cy="16" r="10" stroke="#2AABDD"/>
+        </g>
+
+        <!-- Лёгкое "облако заблуждения" -->
+        <g filter="url(#home_filter_2)">
+            <path d="M9 18 Q11 14 14 16 Q16 12 20 15 Q23 14 24 18"
+                  stroke="#2AABDD"/>
+        </g>
+
+        <!-- Знак вопроса -->
+        <g filter="url(#home_filter_2)">
+            <path d="M13 12 Q13 9 16 9 Q19 9 19 12 Q19 14 16 15 Q16 16 16 17"
+                  stroke="#2AABDD"/>
+            <circle cx="16" cy="20" r="1" fill="#2AABDD"/>
+        </g>
+
+    </g>
+</a>
+{% endblock icon %}

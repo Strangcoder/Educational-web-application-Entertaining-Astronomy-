@@ -1,0 +1,19 @@
+{% load static %}
+<a style="all: unset;" href="{% url 'space:planet_detail' link %}">
+    <div class="box_card {% if link in visited_slugs or link == 'uran' and 'uranus' in visited_slugs or link == 'neptune' and 'neptun' in visited_slugs %}visited{% endif %}">
+        <div class="frame" style="--planet-img: url('{% static path %}')">
+            <div class="top-part">
+                <div class="corner left-top"></div>
+                <div class="corner rigth-top"></div>
+            </div>
+            <div class="middle-part"></div>
+            <div class="bottom-part">
+                <div class="corner left-bottom"></div>
+                <div class="corner rigth-bottom"></div>
+            </div>
+        </div>
+        <div class="box-name">
+            <p class="name-planet">{{name_planets}}</p>
+        </div>
+    </div>
+</a>

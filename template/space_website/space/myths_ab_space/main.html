@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/style_skeleton.css' %}">
+<link rel="stylesheet" href="{% static 'css/page_myths_ab_space/style_myths.css' %}">
+{% endblock head %}
+{% block content %}
+<div class="parent">
+    {% include 'space_website/space/myths_ab_space/myths_card.html' %}
+</div>
+{% endblock content %}

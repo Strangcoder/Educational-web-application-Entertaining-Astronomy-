@@ -1,0 +1,41 @@
+{% extends 'base_card.html' %}
+{% load static %}
+{%block class_cbc%}home_screen{%endblock class_cbc%}
+{% block content %}
+<div class="SC_left_column">
+    <div class="box_SCL_img1">
+        <img class="SLC_img" src="{% static 'image/diagram_SC_left_column.png' %}">
+    </div>
+    <div class="box_SCL_img2">
+        <img class="SLC_img1" src="{% static 'image/diagram1_SC_left_column.png' %}">
+    </div>
+    <div class="box_SCL_img3">
+        <img class="SLC_img2" src="{% static 'image/diagram2_SC_left_column.png' %}">
+    </div>
+</div>
+<div class="{% block SCC_name %}SC_center_column{% endblock SCC_name %}">
+    {% block SC_center_column %}
+    {% endblock SC_center_column %}
+    <div class="SCL_block2">
+        <div><p>Топливо: 100%</p></div>
+        <div><p>Уровень O₂: 100%</p></div>
+        <div><p>Темп: 22 °C (K: 295 K)</p></div>
+    </div>
+</div>
+<div class="SC_rigth_column">
+    <div class="SRC_img_box">
+        <a class="SRC_profile_link" href="{% url 'space:profile' %}" aria-label="Перейти в профиль">
+            <img class="SRC_img" src="{% static 'image/SC_rigth_column_card_profile.png' %}">
+        </a>
+        <a class="SRC_profile_link" href="{% url 'space:profile' %}" aria-label="Перейти в профиль">
+            <p class="SRC_profile_text">
+                <span class="text_profile">ПРОФИЛЬ</span>
+                <span class="text_click">НАЖМИТЕ</span>
+            </p>
+        </a>
+    </div>
+    <div class="SRC_img_box1">
+        <img class="SRC_img1" src="{% static 'image/SC_rigth_column_location.png' %}">
+    </div>
+</div>
+{% endblock content %}

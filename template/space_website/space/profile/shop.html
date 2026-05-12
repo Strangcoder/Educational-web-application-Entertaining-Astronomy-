@@ -1,0 +1,74 @@
+{% load static %}
+<div id="screen_shop" class="hidden">
+    <div id="block_shop_ship" class="parent_block_shop swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="block_shop">
+                    {% for i in skin_ship %}
+                        <div class="box_card">
+                            <div class="frame" style="--planet-img: url('{{i.image.url}}')">
+                                <div class="top-part-shape-box">
+                                    <div class="corner left-top-ship"></div>
+                                    <div class="corner rigth-top-ship"></div>
+                                </div>
+                                <div class="middle-part-shape-box"></div>
+                                <div class="bottom-part-shape-box">
+                                    <div class="corner left-bottom-ship"></div>
+                                    <div class="corner rigth-bottom-ship"></div>
+                                </div>
+                            </div>
+                            <div class="box-name">
+                                <p class="name-planet">{{i.name}} | {{i.price}} космо</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="block_shop">
+                    {% for i in skin_ship %}
+                        <div class="box_card">
+                            <div class="frame" style="--planet-img: url('{{i.image.url}}')">
+                                <div class="top-part-shape-box">
+                                    <div class="corner left-top-ship"></div>
+                                    <div class="corner rigth-top-ship"></div>
+                                </div>
+                                <div class="middle-part-shape-box"></div>
+                                <div class="bottom-part-shape-box">
+                                    <div class="corner left-bottom-ship"></div>
+                                    <div class="corner rigth-bottom-ship"></div>
+                                </div>
+                            </div>
+                            <div class="box-name">
+                                <p class="name-planet">{{i.name}} | {{i.price}} космо</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next">
+            <svg width="21" height="34" viewBox="0 0 21 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d_382_3192)">
+                    <path d="M18.1421 18.1421C18.9232 17.3611 18.9232 16.0947 18.1421 15.3137L5.41423 2.58577C4.63318 1.80472 3.36685 1.80472 2.5858 2.58577C1.80475 3.36682 1.80475 4.63315 2.5858 5.4142L13.8995 16.7279L2.5858 28.0416C1.80475 28.8227 1.80475 30.089 2.5858 30.87C3.36685 31.6511 4.63318 31.6511 5.41423 30.87L18.1421 18.1421ZM15.7279 16.7279V18.7279H16.7279V16.7279V14.7279H15.7279V16.7279Z" fill="#008EC0"/>
+                </g>
+            </svg>
+
+        </div>
+        <div class="swiper-button-prev">
+            <svg width="21" height="34" viewBox="0 0 21 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                    <path d="M2.58579 18.1421C1.80474 17.3611 1.80474 16.0947 2.58579 15.3137L15.3137 2.58577C16.0948 1.80472 17.3611 1.80472 18.1421 2.58577C18.9232 3.36682 18.9232 4.63315 18.1421 5.4142L6.82843 16.7279L18.1421 28.0416C18.9232 28.8227 18.9232 30.089 18.1421 30.87C17.3611 31.6511 16.0948 31.6511 15.3137 30.87L2.58579 18.1421ZM5 16.7279L5 18.7279H4L4 16.7279V14.7279H5L5 16.7279Z" fill="#00BCFF"/>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <div class="block_button_shop">
+        <div class="back_game button_shop" id="ids_back_game">
+            <p>НАЗАД</p>
+        </div>
+        <div class="balance_game button_shop">
+            <p>БАЛАНС: {{user.coins}}</p>
+        </div>
+    </div>
+</div>

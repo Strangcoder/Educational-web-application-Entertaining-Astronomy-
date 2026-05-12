@@ -1,0 +1,483 @@
+@media (min-width: 601px) and (max-width: 1280px) {
+    html,
+    body {
+        min-height: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    .parent {
+        min-height: 100svh;
+        height: auto;
+        justify-content: center;
+        padding: 28px 0;
+        box-sizing: border-box;
+    }
+
+    .card_box {
+        width: min(94vw, 920px);
+        min-height: min(86svh, 780px);
+    }
+
+    .card_box_content,
+    .home_screen,
+    .myths_screen,
+    .quiz_screen,
+    .planet_screen,
+    .structure_screen,
+    .structur_screen,
+    .structure_profile {
+        width: 96%;
+        min-height: 0;
+        border-radius: 14px;
+    }
+
+    .card_box_elDN {
+        transform: translateY(-30px);
+    }
+
+    .block_content {
+        min-height: 0;
+        margin: 22px 0 28px;
+    }
+
+    .title_txt,
+    .title-block_card p,
+    .title_block p {
+        font-size: clamp(24px, 3.1vw, 30px);
+        text-align: center;
+    }
+
+    .middle-part p,
+    .txt-paramets,
+    .txt-desc-structure,
+    .info_block p,
+    .answer_item span,
+    .result_block p {
+        line-height: 1.25;
+    }
+
+    .parent_block:hover,
+    .quest_block:hover,
+    .info_block:hover,
+    .result_block:hover,
+    .answer_item:hover,
+    .box_achiev:hover,
+    .block_body:hover,
+    .box_decor:hover,
+    .img_decor:hover,
+    .ava:hover,
+    .meta_body:hover {
+        transform: none;
+    }
+
+    .chapter_one-block_card{
+        justify-content: center;
+        column-gap: 5%;
+    }
+    .SCCS_content div{
+        width: 75%;
+    }
+    .Story_center_column_story{
+        grid-template-rows: 1fr 2fr 0.5fr;
+    }
+    .SC_center_column{
+        grid-template-rows: 2fr 1fr 0.5fr;
+    }
+    .block_card_center_column{
+        grid-template-rows: 0.5fr 2fr 0.5fr;
+    }
+    .box-name{
+        height: 30%;
+    }
+    .box_card{
+        align-items: center;
+        width: 120px;
+        height: 150px;
+    }
+    .name-planet{
+        font-size: 20px;
+    }
+    .block_planet{
+        width: 100%;
+        height: 100%;
+        min-height: 500px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+    .home_screen {
+        grid-template-columns: 1fr;
+        /* padding: 22px 28px; */
+        box-sizing: border-box;
+    }
+
+    .SC_left_column,
+    .SC_rigth_column {
+        display: none;
+    }
+
+    .SC_center_column,
+    .Story_center_column_story {
+        min-height: 66svh;
+    }
+
+    .block_myths {
+        padding: 26px 34px 34px;
+        gap: 16px;
+    }
+
+    .parent_block {
+        min-height: 72px;
+        height: auto;
+    }
+
+    .middle-part p {
+        font-size: clamp(17px, 1.4vw, 21px);
+    }
+
+    .block_content:has(.part_structure) {
+        grid-template-columns: 44% 56%;
+        margin-top: 18px;
+    }
+
+    .box-frame-progress {
+        gap: 14px;
+        padding-right: 8px;
+    }
+
+    .progress {
+        gap: 17px;
+    }
+
+    .point {
+        width: 24px;
+        height: 24px;
+    }
+
+    .part_desc {
+        padding-top: 40px;
+        grid-template-rows: 82% 18%;
+    }
+
+    .box-desc {
+        gap: 12px;
+        padding-right: 5%;
+        min-height: 400px;
+    }
+
+    .txt-name {
+        font-size: clamp(22px, 2.7vw, 24px);
+    }
+
+    .txt-paramets,
+    .txt-desc-structure {
+        font-size: clamp(16px, 2vw, 17px);
+    }
+
+    .txt-desc-planet{
+        font-size: 18px;
+    }
+
+    .img_struc {
+        max-height: 52svh;
+        object-fit: cover;
+    }
+
+    .main_block {
+        grid-template-rows: auto auto minmax(65px, auto) 1fr;
+        padding: 34px 28px;
+        row-gap: 18px;
+        overflow: auto;
+    }
+
+    .info_block {
+        /* min-height: 132px; */
+        padding: 16px 18px;
+    }
+
+    .info_block p {
+        font-size: clamp(17px, 1.3vw, 21px);
+    }
+
+    .middle-part #question_text {
+        font-size: clamp(18px, 2.2vw, 20px);
+    }
+
+    .responses_block {
+        min-height: 230px;
+        justify-content: space-evenly;
+        padding: 14px 22px;
+    }
+
+    .answer_item {
+        min-height: 44px;
+        height: auto;
+        column-gap: 12px;
+    }
+
+    .answer_item input {
+        flex: 0 0 24px;
+    }
+
+    .answer_item span {
+        font-size: clamp(16px, 2vw, 18px);
+    }
+
+    .main_box_profile {
+        padding: 42px 30px;
+    }
+
+    .box_profile {
+        grid-template-rows: auto minmax(240px, 44%);
+        row-gap: 16px;
+    }
+
+    .profile_data {
+        padding: 14px 14px 0px 14px;
+    }
+
+    .user_data {
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+    .profile_img {
+        max-width: 160px;
+    }
+
+    .txt_info p,
+    .meta_info p {
+        font-size: clamp(15px, 1.9vw, 15px);
+    }
+
+
+
+    .block_body {
+        min-height: 150px;
+    }
+
+    .data_achiev {
+        min-height: 250px;
+    }
+
+    .box_button {
+        display: none;
+        width: min(76vw, 680px);
+        height: 88px;
+    }
+
+    .txt_button {
+        font-size: clamp(30px, 4vw, 38px);
+    }
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+    .parent {
+        justify-content: flex-start;
+        padding: 22px 0;
+    }
+
+    .card_box {
+        width: 95vw;
+        min-height: auto;
+    }
+
+    .card_box_elUP {
+        transform: translateY(25px);
+    }
+
+    .card_box_elDN {
+        transform: translateY(-25px);
+    }
+
+    .card_box_content,
+    .home_screen,
+    .myths_screen,
+    .quiz_screen,
+    .planet_screen,
+    .structure_screen,
+    .structur_screen,
+    .structure_profile {
+        width: 95%;
+    }
+
+    .home_screen,
+    .block_content,
+    .block_content:has(.part_structure),
+    .profile_data,
+    .meta_data,
+    .screen_game {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .SC_left_column,
+    .SC_rigth_column {
+        display: none;
+    }
+
+    .SC_center_column {
+        min-height: 70svh;
+    }
+
+    .block_content {
+        height: auto;
+        min-height: 70svh;
+        margin: 24px 0;
+    }
+
+    .block_myths {
+        padding: 22px;
+        gap: 14px;
+    }
+
+    .parent_block {
+        min-height: 72px;
+        height: auto;
+    }
+
+    .part_desc {
+        padding: 22px 0 0;
+    }
+
+    .box-frame-progress {
+        min-height: 320px;
+        padding: 0 18px;
+        align-items: center;
+    }
+
+    .frame {
+        width: 100%;
+        height: 260px;
+    }
+
+    .progress {
+        height: auto;
+        gap: 14px;
+        justify-content: center;
+    }
+
+    .point {
+        width: 22px;
+        height: 22px;
+    }
+
+    .box-desc {
+        padding: 0 22px;
+    }
+
+    .box-arrows {
+        min-height: 64px;
+    }
+
+    .main_block {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 72svh;
+        padding: 30px 22px;
+        gap: 16px;
+        overflow: visible;
+    }
+
+    .info_block,
+    .quest_block,
+    .responses_block,
+    .result_block {
+        height: auto;
+        min-height: 90px;
+    }
+
+    .info_block p {
+        font-size: 18px;
+    }
+
+    .responses_block {
+        padding: 14px 18px;
+        gap: 10px;
+    }
+
+    .answer_item {
+        min-height: 42px;
+        height: auto;
+        column-gap: 12px;
+    }
+
+    .main_box_profile {
+        height: auto;
+        padding: 32px 22px;
+    }
+
+    .box_profile {
+        height: auto;
+        grid-template-rows: auto auto;
+    }
+
+    .profile_data {
+        height: auto;
+        padding: 14px;
+        row-gap: 14px;
+    }
+
+    .user_data,
+    .meta_data {
+        height: auto;
+    }
+
+    .user_data {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .profile_img {
+        max-width: 150px;
+    }
+
+    .body_parametrs,
+    .meta_decor {
+        padding: 0;
+    }
+
+    .block_body,
+    .box_decor {
+        width: 100%;
+        min-height: 140px;
+    }
+
+    .data_achiev {
+        min-height: 260px;
+        height: auto;
+    }
+
+    .box_button {
+        width: min(84vw, 620px);
+        height: 82px;
+    }
+
+    .txt_button {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1280px) and (orientation: landscape) and (max-height: 760px) {
+    .parent {
+        justify-content: flex-start;
+        padding: 20px 0 28px;
+    }
+
+    .card_box {
+        min-height: 720px;
+    }
+
+    .main_block,
+    .main_box_profile,
+    .block_content {
+        overflow: auto;
+    }
+}

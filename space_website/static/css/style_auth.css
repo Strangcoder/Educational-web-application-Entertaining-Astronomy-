@@ -1,0 +1,332 @@
+@font-face {
+    font-family: 'Jura'; /* Имя, которое вы будете использовать для шрифта */
+    src: url('../font/Jura.ttf') format('truetype'); /* Укажите путь к файлу шрифта */
+    font-weight: lighter; /* Установите вес для шрифта */
+    font-style: normal; /* Установите стиль для шрифта */
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;         /* добавлено */
+    overflow: hidden;
+    background: black;
+}
+
+canvas {
+    display: block;
+    position: fixed;      /* чтобы canvas был на фоне */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;           /* позади блока */
+}
+
+.parent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;           /* поверх canvas */
+}
+
+.block_auth {
+    width: auto;
+    height: auto;
+    background: rgba(0, 45, 79, 0.85);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding:15px 0px 0px 0px;
+    position: relative;
+}
+.box_element{
+    width:95%;
+}
+
+.box_element svg {
+    animation: svg-glow 2s infinite alternate;
+}
+
+@keyframes svg-glow {
+    0%   { filter: drop-shadow(0 0 2px rgba(42,171,221,0.5)); }
+    50%  { filter: drop-shadow(0 0 10px rgba(42,171,221,0.8)); }
+    100% { filter: drop-shadow(0 0 4px rgba(42,171,221,0.6)); }
+}
+
+.hello_text {
+    font-family: 'Jura', serif;
+    position: absolute;
+    top: -4%;
+    left: 21%;
+    font-size: 24px;
+    color: rgba(41, 171, 223, 1);
+    font-weight: 600;
+    cursor: pointer;
+
+    text-shadow:
+        0 0 4px rgba(41, 171, 223, 0.6),
+        0 0 8px rgba(41, 171, 223, 0.5),
+        0 0 16px rgba(41, 171, 223, 0.4);
+
+    animation: text-glow 2.5s ease-in-out infinite alternate;
+
+    transition: transform 0.2s ease;
+}
+@keyframes text-glow {
+    0% {
+        text-shadow:
+            0 0 3px rgba(41, 171, 223, 0.4),
+            0 0 6px rgba(41, 171, 223, 0.3),
+            0 0 12px rgba(41, 171, 223, 0.2);
+    }
+
+    100% {
+        text-shadow:
+            0 0 8px rgba(41, 171, 223, 0.9),
+            0 0 16px rgba(41, 171, 223, 0.7),
+            0 0 32px rgba(41, 171, 223, 0.5),
+            0 0 50px rgba(41, 171, 223, 0.3);
+    }
+}
+
+.hello_text:hover {
+    transform: scale(1.05);
+    text-shadow:
+        0 0 10px rgba(42, 171, 221, 1),
+        0 0 20px rgba(42, 171, 221, 0.8),
+        0 0 40px rgba(42, 171, 221, 0.6),
+        0 0 60px rgba(42, 171, 221, 0.4);
+}
+
+.two_field{
+    height:100%;
+    border:0px solid;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: start;
+    padding: 0px 15px;
+
+}
+
+.field{
+    width:100%;
+    height:auto;
+    border:0px solid;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:1.5rem;
+    margin-left: 0.3rem;
+
+}
+.field form{
+    width:100%;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+}
+
+.field form.login{
+    width:100%;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
+}
+
+.field .form_for_field{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.field .button_for_field{
+    display:flex;
+    flex-direction: row;
+    justify-content: start;
+
+}
+.auth-field {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.form_for_field input{
+    display:block;
+    width: 100%;
+    height: 2.1rem;
+    box-sizing:border-box;
+    margin-bottom: 0;
+    font-family: 'Jura', serif;
+    padding-left:3%;
+    font-size:18px;
+    background: rgb(13, 78, 111);
+    border: 0px solid;
+    font-weight: bold;
+    color: rgba(0, 188, 255, 1);
+
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.form_for_field input:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 0 10px rgba(42, 171, 221, 0.8));
+}
+
+.form_for_field input::placeholder{
+    color: rgba(0, 188, 255, 1);
+}
+
+.form_for_field input:focus{
+  outline: 0;
+}
+
+.auth-field-error {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0.35rem 0 0;
+    color: #ff4b6e;
+    font-family: 'Jura', serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 0 6px rgba(249, 72, 122, 0.45);
+    overflow-wrap: anywhere;
+}
+
+.auth-form-error {
+    margin: 0 0 0.75rem;
+}
+
+.box_button_auth{
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem;
+}
+
+.box_button_auth input:nth-child(1){
+    width:100%;
+    max-width:300px;
+    height:2.1rem;
+    border: 0px solid;
+    font-family: 'Jura', serif;
+    background: rgb(13, 78, 111);
+    color: rgba(0, 188, 255, 1);
+    font-weight: bold;
+    font-size:25px;
+    margin-top:1.5rem;
+}
+
+.box_button_auth input:nth-child(1).login{
+    width:100%;
+    max-width:120px;
+    height:2.1rem;
+    border: 0px solid;
+    font-family: 'Jura', serif;
+    background: rgb(13, 78, 111);
+    color: rgba(0, 188, 255, 1);
+    font-weight: bold;
+    font-size:25px;
+    margin-top:1.5rem;
+}
+
+.box_button_auth div{
+    width:100%;
+    max-width:120px;
+    height:2.1rem;
+    border: 0px solid;
+    font-family: 'Jura', serif;
+    background: rgb(13, 78, 111);
+    color: rgba(0, 188, 255, 1);
+    font-weight: bold;
+    font-size:25px;
+    margin-top:1.5rem;
+    cursor: pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.box_button_auth div.login{
+    width:100%;
+    max-width:300px;
+    height:2.1rem;
+    border: 0px solid;
+    font-family: 'Jura', serif;
+    background: rgb(13, 78, 111);
+    color: rgba(0, 188, 255, 1);
+    font-weight: bold;
+    font-size:25px;
+    margin-top:1.5rem;
+}
+
+.box_button_auth div a,
+.box_button_auth div a:visited,
+.box_button_auth div a:hover,
+.box_button_auth div a:active,
+.box_button_auth div a:focus,
+.box_button_auth div a:focus-visible{
+    all:unset;
+    display:inline;
+}
+
+.box_profile{
+    width:100%;
+    height:100%;
+    border:0px solid;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    margin-top: -0.5rem;
+    padding-left:0.6rem;
+}
+
+.box_profile svg{
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.box_profile svg:hover{
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 10px rgba(42, 171, 221, 0.8));
+}
+
+
+.coordinate-box{
+    width:100%;
+}
+
+.coordinate-box p{
+    font-family: 'Jura', serif;
+    color: rgba(41, 171, 223, 1);
+    margin-left:1.2rem;
+}
+
+#inp1,#inp2{
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+#inp2:hover,#inp1:hover{
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 10px rgba(42, 171, 221, 0.8));
+}
+
+@media (max-width: 1360px){
+    .hello_text{
+        top:-4%;
+        font-size:26px;
+    }
+    .box_profile{
+        padding-right: 18px
+    }
+    .box_button_auth{
+        gap:2.8rem
+    }
+}

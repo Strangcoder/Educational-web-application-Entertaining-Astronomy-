@@ -1,0 +1,297 @@
+@font-face {
+    font-family: 'Jura'; /* Имя, которое вы будете использовать для шрифта */
+    src: url('../../font/Jura.ttf') format('truetype'); /* Укажите путь к файлу шрифта */
+    font-weight: lighter; /* Установите вес для шрифта */
+    font-style: normal; /* Установите стиль для шрифта */
+}
+.home_screen {
+  width: 98%;
+  height: 100%;
+  border: 0px solid;
+  background: rgba(0, 45, 79, 0.80);
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr;
+}
+.SC_left_column {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+}
+.box_SCL_img1{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    transform: translateY(20%);
+}
+
+.box_SCL_img2{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    transform: translateY(8%);
+}
+
+.box_SCL_img3{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    transform: translateY(-12%);
+}
+
+.SLC_img {
+    width: 85%;
+    height: auto;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+.SLC_img1 {
+    width: 85%;
+    height: auto;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+.SLC_img2 {
+    width: 85%;
+    height: auto;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+.SLC_img:hover,
+.SLC_img1:hover,
+.SLC_img2:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 8px rgba(0, 188, 255, 0.6));
+}
+
+.SC_center_column {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr 1fr;
+}
+
+.SC_rigth_column {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 30px 0px 0px 0px;
+    /* align-items: flex-end; */
+}
+
+
+.SRC_img_box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    /* margin-right: 10px; */
+}
+
+.SRC_profile_link {
+    display: contents;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.SRC_img_box:has(.SRC_img:hover),
+.SRC_img_box:has(.SRC_profile_text:hover) {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 10px rgba(0, 188, 255, 0.6));
+}
+
+/* нажатие на картинку */
+.SRC_img_box:has(.SRC_img:active),
+.SRC_img_box:has(.SRC_profile_text:active) {
+  transform: scale(0.97);
+  filter: drop-shadow(0 0 4px rgba(0, 188, 255, 0.5));
+}
+
+.SRC_img {
+    width: 70%;
+    height: auto;
+    margin-left: 17%;
+}
+
+.SRC_profile_text {
+    width: 180px;
+    height: 36px;
+    position: relative;
+    font-family: 'Jura', serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: rgba(0, 188, 255, 1);
+    filter: drop-shadow(0px 0px 2px rgba(41, 171, 223, 1));
+    margin: 0;
+    transform: translateY(-120%) translateX(14%);
+    cursor: pointer;
+}
+
+.SRC_profile_text span {
+    position: absolute;
+    inset: 0;
+    text-align: center;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.text_profile {
+    animation-name: profileFade;
+}
+
+.text_click {
+    animation-name: clickFade;
+}
+
+@keyframes profileFade {
+    0%, 36% {
+        opacity: 1;
+    }
+
+    48%, 86% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes clickFade {
+    0%, 36% {
+        opacity: 0;
+    }
+
+    48%, 86% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.SRC_img_box1{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.SRC_img1 {
+    width: 85%;
+    height: auto;
+    margin-left: 17%;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    
+}
+
+.SRC_img1:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 8px rgba(0, 188, 255, 0.6));
+}
+
+.SCL_block2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+}
+
+.SCL_block2 div {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8%;
+    cursor: pointer;
+}
+
+.SCL_block2 p {
+    font-family: 'Jura', serif;
+    font-size: 19px;
+    font-weight: 800;
+    color: rgba(0, 188, 255, 1);
+    filter: drop-shadow(0px 0px 2px rgba(41, 171, 223, 1));
+    margin: 0;
+
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.SCL_block2 p:hover{
+    transform: scale(1.05);
+    filter: drop-shadow(0px 0px 6px rgba(0, 188, 255, 0.9));
+}
+
+
+@media (max-width: 1280px) {
+    .home_screen {
+        grid-template-columns: 1fr;
+        /* padding: 20px; */
+        box-sizing: border-box;
+    }
+
+    .SC_left_column,
+    .SC_rigth_column {
+        display: none;
+    }
+
+    .SC_center_column,
+    .Story_center_column_story {
+        min-height: 62vh;
+    }
+
+    .SCL_block2 {
+        align-content: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px 14px;
+    }
+
+    .SCL_block2 div {
+        margin-top: 0;
+    }
+
+    .SCL_block2 p {
+        font-size: clamp(14px, 2.4vw, 19px);
+    }
+}
+
+@media (max-width: 480px) {
+    .home_screen {
+        width: 96%;
+        padding: 16px 12px;
+        border-radius: 12px;
+    }
+
+    .SCL_block2 {
+        flex-direction: column;
+        gap: 6px;
+    }
+}

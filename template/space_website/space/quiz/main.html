@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/style_skeleton.css' %}">
+<link rel="stylesheet" href="{% static 'css/page_quiz/style_quiz.css'%}">
+<link rel="stylesheet" href="{% static 'css/page_quiz/structur_screen_style_quiz.css'%}">
+
+{% endblock head %}
+
+{% block content %}
+<div class="parent">
+    {% include 'space_website/space/quiz/foundation.html' %}
+</div>
+{% endblock content %}
+{% block script %}
+<script src="{% static 'js/quiz/quiz.js' %}"></script>
+{% endblock script %}

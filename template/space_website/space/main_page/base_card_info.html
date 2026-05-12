@@ -1,0 +1,19 @@
+<div class="foundation-block_card {% if status %}visited{% endif %}">
+    <div class="pack_for_text-block_card">
+        <div class="top_box-block_card">
+            <div class="corner left-top"></div>
+            <div><p class="txt_topbox-block_card">{{title}}</p></div>
+            <div class="corner rigth-top"></div>
+        </div>
+        <div class="center_box-block_card">
+            <div><p class="txt_centerbox-block_card">
+                {{text}}
+            </p></div>
+        </div>
+        <div class="bottom_box-block_card">
+            <div class="corner left-bottom"></div>
+            <div class="background_txt-block_card"><a style="all: unset;" href="{% url link %}"><p class="txt_bottombox-block_card">изучить</p></a></div>
+            <div class="corner rigth-bottom"></div>
+        </div>
+    </div>
+</div>

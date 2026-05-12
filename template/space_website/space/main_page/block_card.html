@@ -1,0 +1,18 @@
+{% extends 'space_website/space/main_page/base_card_f_main_page.html' %}
+{% block SCC_name %}block_card_center_column{% endblock SCC_name %}
+{% block SC_center_column %}
+<div class="title-block_card" id="block_studies">
+    <div>
+        <p>Выбрать блок изучения</p>
+    </div>
+</div>
+<div class="block_sector-block_card">
+    <div class="chapter_one-block_card">
+        {% include 'space_website/space/main_page/base_card_info.html' with title="Солнечная система" text="Солнечная система — это Солнце и все тела, вращающиеся вокруг него. Вы изучите планеты — от Меркурия до Нептуна — их тип, размеры, состав, температуру, особенности, орбитальные характеристики и уникальные свойства каждой планеты." link="space:solar_system" status=progress.solar_system%}
+        {% include 'space_website/space/main_page/base_card_info.html' with title="Структуры всленной" text="Структура Вселенной — это объекты всех масштабов — от звезд и астероидов до галактик и сверхскоплений. Вы изучите их тип, расположение, состав, размеры, особенности и уникальные характеристики, погрузившись в устройство и разнообразие космоса." link="space:structure_universe" status=progress.universe%}
+    </div>
+    <div class="chapter_two-block_card">
+        {% include 'space_website/space/main_page/base_card_info.html' with title="Мифы о космосе" text="Мифы о космосе — это популярные заблуждения и легенды о Вселенной. Вы разберётесь, где правда, а где вымысел, узнаете реальные факты, тайны и уникальные особенности космических явлений." link="space:myths_ab_space" status=progress.myths%}
+    </div>
+</div>
+{% endblock SC_center_column %}

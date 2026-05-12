@@ -1,0 +1,16 @@
+{% extends 'space_website/space/myths_ab_space/myth_details/structur_myths.html' %}
+{% load static %}
+{% block model %}
+<div class="structure">
+    {% if myth.model_url %}
+    <div class="sketchfab-embed-wrapper" style="width:100%;height:100%;"> <iframe title="Satellites and space debris around the Earth" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="{{myth.model_url}}" style="width: 100%; height:100%; border-radius: 20px;"> </iframe> </div>
+    {% elif myth.image %}
+    <img class='img_struc' src="{{myth.image.url}}" width="100%" height="100%">
+    {% endif %}
+</div>
+{% endblock model %}
+{% block object_name %}{{myth.name}}{% endblock object_name %}
+{% block object_paramets %}
+{{myth.parameters|linebreaksbr}}
+{% endblock object_paramets %}
+{% block object_desc %}{{myth.description}}{% endblock object_desc %}

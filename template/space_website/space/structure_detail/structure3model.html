@@ -1,0 +1,12 @@
+{% extends 'space_website/space/structure_detail/structur_universe.html' %}
+{% load static %}
+{% block model %}
+<div class="structure">
+<img class='img_struc' src="{{structure.image.url}}" width="100%" height="100%">
+</div>
+{% endblock model %}
+{% block object_name %}{{structure.name}}{% endblock object_name %}
+{% block object_paramets %}
+{{structure.parameters|linebreaksbr}}
+{% endblock object_paramets %}
+{% block object_desc %}{{structure.description}}{% endblock object_desc %}

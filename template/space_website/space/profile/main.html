@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/style_skeleton.css' %}">
+<link rel="stylesheet" href="{% static 'css/page_profile/style_profile.css'%}">
+<link rel="stylesheet" href="{% static 'css/page_profile/structur_screen_style_profile.css'%}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+{% endblock head %}
+
+{% block content %}
+<div class="parent">
+    {% include 'space_website/space/profile/structure_profile.html' with data_ship=models_ship user_profile=profile%}
+    {% include 'space_website/space/profile/button.html' %}
+</div>
+{% endblock content %}
+{% block script %}
+<script>
+const swiper = new Swiper('.achiev-slider', {
+  // свайп мышью / пальцем (включён по умолчанию)
+  simulateTouch: true,
+  grabCursor: true,
+
+  // навигация стрелками
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // свайп + drag уже работает автоматически
+  // но можно усилить ощущения
+  speed: 500,
+
+  // (опционально) бесконечная прокрутка
+  loop: false,
+
+  // (опционально) если нужно много карточек
+  slidesPerView: 1
+});
+</script>
+<script type="text/javascript" src="{% static 'js/games/game.js'%}"></script>
+{% endblock script %}

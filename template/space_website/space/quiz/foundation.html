@@ -1,0 +1,100 @@
+{% extends 'base_card_home.html' %}
+{% load static %}
+{% block class_cbc %}quiz_screen{% endblock class_cbc %}
+{% block content %}
+<div class="main_block" id="quiz-app" data-topic-slug="{{ topic.slug }}">
+    <div class="title_block">
+        <p id="quiz_title">
+            Контроль знаний: {{topic.name}}
+        </p>
+    </div>
+    <div class="info_block">
+        <p id="quiz_info">
+            Контроль знаний - бортовая система оценки, анализирующая степень усвоения полученных данных. По результатам сканирования открывается доступ к новым секторам навигации, повышению звания и активируются улучшения корабельных систем.
+        </p>
+    </div>
+    <div class="quest_block">
+        <div class="top-part">
+            <div class="corner left-top"></div>
+            <div class="corner rigth-top"></div>
+        </div>
+        <div class="middle-part">
+            <p id="question_text">
+            </p>
+        </div>
+        <div class="bottom-part">
+            <div class="corner left-bottom"></div>
+            <div class="corner rigth-bottom"></div>
+        </div>
+    </div>
+    <div class="responses_block" id="answers_block"></div>
+    <div class="result_block" id="result_block" style="display:none;"></div>
+</div>
+{{ questions_data|json_script:"quiz-data" }}
+{% endblock content %}
+{% block icon %}
+<a href="{% url 'space:main' %}#block_studies">
+    <g  transform="translate(395 19) scale(0.9)">
+        <g filter="url(#home_filter_1)">
+        <path d="M27.2763 26.9534H5.74854V14.8007H2.62354L5.05409 12.7173L17.2069 1.95343L28.318 12.7173L30.4013 14.8007H27.2763V26.9534Z" fill="#003053"/>
+        <path d="M27.2763 26.9534H5.74854V14.8007H2.62354L5.05409 12.7173L17.2069 1.95343L28.318 12.7173L30.4013 14.8007H27.2763V26.9534Z" stroke="#2AABDD"/>
+        </g>
+        <g filter="url(#home_filter_2)">
+        <path d="M11.9985 26.6062V17.9257H21.0263V26.6062" stroke="#2AABDD"/>
+        </g>
+    </g>
+</a>
+
+<a href="{% url 'space:profile' %}">
+    <g transform="translate(924 15) scale(1.1)">
+
+        <!-- Голова -->
+        <g filter="url(#home_filter_1)">
+            <circle cx="16" cy="11" r="5" fill="#003053"/>
+            <circle cx="16" cy="11" r="5" stroke="#2AABDD"/>
+        </g>
+
+        <!-- Плечи / силуэт -->
+        <g filter="url(#home_filter_1)">
+            <path d="M8 24
+                     Q8 18 16 18
+                     Q24 18 24 24
+                     Z"
+                  fill="#003053"/>
+            <path d="M8 24
+                     Q8 18 16 18
+                     Q24 18 24 24"
+                  stroke="#2AABDD"/>
+        </g>
+
+    </g>
+</a>
+
+<a href="#" onclick="history.back(); return false;">
+    <g transform="translate(658 2) scale(1.1)">
+
+        <!-- Основной круг (как у тебя в стиле) -->
+        <g filter="url(#home_filter_1)">
+            <circle cx="16" cy="16" r="10" fill="#003053"/>
+            <circle cx="16" cy="16" r="10" stroke="#2AABDD"/>
+        </g>
+
+        <!-- Жирная стрелка влево -->
+        <g filter="url(#home_filter_2)">
+            <path d="M19 12 L13 16 L19 20"
+                  fill="none"
+                  stroke="#2AABDD"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"/>
+            
+            <!-- “хвост” стрелки (усиление жирности/массы) -->
+            <path d="M13 16 H22"
+                  stroke="#2AABDD"
+                  stroke-width="3"
+                  stroke-linecap="round"/>
+        </g>
+
+    </g>
+</a>
+{% endblock icon %}

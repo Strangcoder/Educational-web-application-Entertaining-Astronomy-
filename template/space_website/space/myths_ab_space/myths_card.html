@@ -1,0 +1,108 @@
+{% extends 'base_card_home.html' %}
+{% load static %}
+{% block class_cbc %}myths_screen{% endblock class_cbc %}
+{% block content %}
+<div class="block_content">
+    <div class="block_title">
+        <p class="title_txt" id="myth_title">
+            Мифы о космосе
+        </p>
+    </div>
+    <div class="block_myths" id="myths_container">
+        {% for myth in myth_data %}
+        {% include 'space_website/space/myths_ab_space/myths_block_txt.html' with title_txt=myth.name link=myth.slug%}
+        {% endfor %}
+    </div>
+    <div id="myth_content" class="myth_content" style="display: none;"></div>
+</div>
+{% endblock content %}
+{% block icon %}
+<a href="{% url 'space:structure_universe' %}">
+    <g class="galaxy" transform="translate(380 25) scale(1.4) rotate(-24)">
+
+        <g filter="url(#home_filter_1)">
+            <!-- диск -->
+            <ellipse cx="18" cy="14" rx="12" ry="7"
+                    fill="#003053"/>
+
+            <ellipse cx="18" cy="14" rx="12" ry="7"
+                    fill="none"
+                    stroke="#2AABDD"
+                    opacity="0.9"/>
+        </g>
+
+        <!-- смещённое ядро (важно: убирает “сатурн-эффект”) -->
+        <g filter="url(#home_filter_2)">
+            <circle cx="19" cy="13.5" r="2.7"
+                    fill="#003053"
+                    stroke="#2AABDD"/>
+        </g>
+
+        <!-- лёгкая дуга (не симметричная) -->
+        <path d="
+            M11.5 14
+            C13 10.5, 22.5 10, 24 14
+            C22.5 18, 13.5 18.5, 11.5 14"
+            fill="none"
+            stroke="#2AABDD"
+            opacity="0.7"/>
+
+        <!-- звёзды -->
+        <circle cx="7" cy="10" r="0.9" fill="#2AABDD"/>
+        <circle cx="30" cy="11" r="0.8" fill="#2AABDD"/>
+        <circle cx="26" cy="22" r="0.8" fill="#2AABDD"/>
+
+    </g>
+</a>
+
+<a href="{% url 'space:quiz' 'myths-about-space' %}">
+    <g class="quiz-signal {% if all_myth_visited %}quiz-signal-active{% endif %}" transform="translate(658 4) scale(1)">
+        
+        <g>
+            <path class="quiz-base"
+                d="M16 5 C22 5, 26 8, 26 12 C26 16, 22 17, 20 19 L20 21 H14 L14 18 C16 16, 22 15, 22 12 C22 9, 20 8, 16 8 C13 8, 11 9, 10 11 L7 9 C9 6, 12 5, 16 5 Z"
+                fill="#003053"/>
+
+            <path class="{% if all_myth_visited %}quiz-signal-active{% endif %}"
+                d="M16 5 C22 5, 26 8, 26 12 C26 16, 22 17, 20 19 L20 21 H14 L14 18 C16 16, 22 15, 22 12 C22 9, 20 8, 16 8 C13 8, 11 9, 10 11 L7 9 C9 6, 12 5, 16 5 Z"
+                fill="none"
+                stroke="#2AABDD"
+                stroke-width="1.2"/>
+        </g>
+
+        <g>
+            <circle class="{% if all_myth_visited %}quiz-signal-active{% endif %}"
+                    cx="16" cy="24" r="2.2"
+                    fill="#003053"
+                    stroke="#2AABDD"
+                    stroke-width="1"/>
+        </g>
+
+    </g>
+</a>
+
+<a href="{% url 'space:profile' %}">
+    <g transform="translate(924 15) scale(1.1)">
+
+        <!-- Голова -->
+        <g filter="url(#home_filter_1)">
+            <circle cx="16" cy="11" r="5" fill="#003053"/>
+            <circle cx="16" cy="11" r="5" stroke="#2AABDD"/>
+        </g>
+
+        <!-- Плечи / силуэт -->
+        <g filter="url(#home_filter_1)">
+            <path d="M8 24
+                     Q8 18 16 18
+                     Q24 18 24 24
+                     Z"
+                  fill="#003053"/>
+            <path d="M8 24
+                     Q8 18 16 18
+                     Q24 18 24 24"
+                  stroke="#2AABDD"/>
+        </g>
+
+    </g>
+</a>
+{% endblock icon %}
