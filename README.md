@@ -9,4 +9,4 @@ Stack:
 - JavaScript
 - MySQLite
 
-![authentication screen](screenshots_project/Screenshot 2026-05-04 at 17-24-43 SPACE.png)
+You can find out what a web application looks like in the screenshots_project/ catalog.
